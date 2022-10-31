@@ -16,27 +16,16 @@ int LeapYear(int y1, int Month[1], int year)
 	}
 	return 0;
 }
-int Final(int d1, int d2, int d3)
+int Final(int day, int month, int year)
 {	
-	
-}
-
-
-int main()
-{
-	int d1, d2, m1, y1, m2, y2, year, month = 0, day = 0, sum = 0;
-	int Month[12]{ 31,28,31,30,31,30,31,31,30,31,30,31 };	
-	cout << "Incert 2 dates in format dd mm yy:" << endl;
-	cout << "Incert 1st date: " << endl;
-	cin >> d1 >> m1 >> y1;
-	cout << "Incert 2d date: " << endl;
-	cin >> d2 >> m2 >> y2;	   
+	int d1, d2, m1, y1, m2, y2, year, sum;
+	int Month[12];
 	for (int i = y1; i <= y2; i++)
 	{
 		LeapYear(i, Month, year);
 		sum += year;
 		if (m2 > m1)
-		{			
+		{
 			for (int j = m1; j < m2; j++)
 			{
 				month = month + Month[j - 1];
@@ -48,7 +37,7 @@ int main()
 				else if (d1 < d2 && j = m1)
 				{
 					day = day - d1 + d2;
-				}							
+				}
 			}
 		}
 		if (m2 < m1)
@@ -68,12 +57,26 @@ int main()
 			}
 			for (int j = 0; j < m2; j++)
 			{
-				month = month + Month[j-1];
+				month = month + Month[j - 1];
 			}
 		}
 	}
 	sum = sum + month + day;
 	return 0;
+	
+}
+
+
+int main()
+{
+	int d1, d2, m1, y1, m2, y2, year, month = 0, day = 0, sum = 0;
+	int Month[12]{ 31,28,31,30,31,30,31,31,30,31,30,31 };	
+	cout << "Incert 2 dates in format dd mm yy:" << endl;
+	cout << "Incert 1st date: " << endl;
+	cin >> d1 >> m1 >> y1;
+	cout << "Incert 2d date: " << endl;
+	cin >> d2 >> m2 >> y2;
+	
 }
 
 
