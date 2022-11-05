@@ -3,14 +3,14 @@
 using namespace std;
 
 int HowMany(int arr[], int m, int p, int z, int n)
-{    
+{       
     for (int i = 0; i < n; i++)
     {       
         if (arr[i] == 0) z += 1;
         else if (arr[i] < 0) m += 1;
-        else if (arr[i] > 0) p += 1;       
-        return m, p, z;
+        else if (arr[i] > 0) p += 1;  
     }
+    return m, p, z;
 }
 
 int main()
