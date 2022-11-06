@@ -1,27 +1,7 @@
 #include <iostream>
 #include <ctime>
 using namespace std;
-//void PrintArray(int arr[], const uint32_t size)
-//{
-//  for (size_t i = 0; i < size; i++)
-//  {
-//      cout << arr[i] << "\t";
-//  }cout << endl;
-//}
-//void PrintArray(double arr[], const uint32_t size)
-//{
-//  for (size_t i = 0; i < size; i++)
-//  {
-//      cout << arr[i] << "\t";
-//  }cout << endl;
-//}
-//void PrintArray(char arr[], const uint32_t size)
-//{
-//  for (size_t i = 0; i < size; i++)
-//  {
-//      cout << arr[i] << "\t";
-//  }cout << endl;
-//}
+
 template<typename T>
 T Rand(char trigger = 'i')
 {
@@ -41,6 +21,7 @@ T Rand(char trigger = 'i')
     }break;
     }
 }
+
 template <typename T>
 void RandArray(T arr[], const uint32_t size)
 {
@@ -62,6 +43,7 @@ void RandArray(T arr[], const uint32_t size)
         arr[i] = Rand<T>(trigger);
     }
 }
+
 template <typename T>
 void RandArray(T arr[][5], const uint32_t col, const uint32_t row)
 {
@@ -99,6 +81,7 @@ void PrintArray(T arr[][5], const uint32_t col, const uint32_t row)
     }
     cout << endl;
 }
+
 template <typename T>
 void PrintArray(T arr[], const uint32_t size)
 {
@@ -107,6 +90,7 @@ void PrintArray(T arr[], const uint32_t size)
         cout << arr[i] << "\t";
     }cout << endl;
 }
+
 int main()
 {
     srand(time(0));
