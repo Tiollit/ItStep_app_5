@@ -25,6 +25,8 @@ int main()
         cout << arr[i] << " ";
     }
     int n = sizeof(arr) / sizeof(arr[0]);
+    //cout << endl;
+    //cout << n << endl;
     HowMany(arr, m, p, z, n);
     cout << endl;
     cout << "In array there is: " << z << " Zero elements; " << p << " Plus elements; " << m << " Minus elements";
