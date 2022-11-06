@@ -70,7 +70,7 @@ int HowManyDays(int month[], int d1, int d2, int m1, int m2, int y1, int y2)
 int main()
 {
 	int month[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
-	int d1, d2, m1, m2, y1, y2, days = 0, months = 0, years = 0, sum = 0;
+	int d1, d2, m1, m2, y1, y2, sum = 0;
 	cout << "Incert 2 dates in format dd mm yy begining from the lovest one: " << endl;
 	cout << "Incert 1-st date: " << endl;
 	cin >> d1 >> m1 >> y1;
