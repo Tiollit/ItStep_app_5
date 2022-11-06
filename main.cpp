@@ -26,7 +26,7 @@ double Matrix(double arr[])
     {
         for (size_t j = 0; j < 4; j++)
         {
-            arr[i][j] = rand() % 100 + 0.1;
+            arr[i][j] = (rand() % 100) * 0.1;
             cout << arr[i][j] << " ";
         }
         cout << endl;
@@ -37,8 +37,17 @@ double Matrix(double arr[])
 char Matrix(char arr[])
 {
     char arr[4][4];
-    arr[4][4] =
+    for (size_t i = 0;i < 4; i++)
     {
+        for (size_t j = 0; j < 4; j++)
+        {
+            arr[i][j] = rand() % 255;
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    /*{
         {'h', 'e', 'l', 'l'},
         {'b', 'a', 'c', 'k'},
         {'r', 'e', 'a', 'l'},
@@ -51,7 +60,7 @@ char Matrix(char arr[])
             cout << arr[i][j] << " ";
         }
         cout << endl;
-    }
+    }*/
     return arr[4][4];
 }
 
