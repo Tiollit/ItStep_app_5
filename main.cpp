@@ -63,21 +63,36 @@ void PrintArray(T arr[][5], const uint32_t col, const uint32_t row)
     cout << endl;
 }
 
-template <typename T>
-void Big(T arr[][5], const uint32_t col, const uint32_t row, int max)
+void Big(int arr_i[][5], const uint32_t col, const uint32_t row, int max)
 {
-    max = arr[0];
+    max = arr_i[0];
     for (size_t i = 0;i < col; i++)
     {
         for (size_t j = 0; j < row; j++)
         {
-            if (i == j && max > arr[i])
+            if (i == j && max > arr_i[i])
             {
-                max = arr[i];
+                max = arr_i[i];
             }                   
         }        
     }
     cout << "Maximum: " << max << endl;
+}
+
+void Small(int arr_i[][5], const uint32_t col, const uint32_t row, int min)
+{
+    min = arr_i[0];
+    for (size_t i = 0;i < col; i++)
+    {
+        for (size_t j = 0; j < row; j++)
+        {
+            if (i == j && min < arr_i[i])
+            {
+                min = arr_i[i];
+            }
+        }
+    }
+    cout << "Maximum: " << min << endl;
 }
 
 int main()
