@@ -30,12 +30,11 @@ void Matrix(double arr[], const uint32_t size)
     }    
 }
 
-void Matrix(char arr[])
-{
-    char arr[4][4];
-    for (size_t i = 0;i < 4; i++)
+void Matrix(char arr[], const uint32_t size)
+{    
+    for (size_t i = 0;i < size; i++)
     {
-        for (size_t j = 0; j < 4; j++)
+        for (size_t j = 0; j < size; j++)
         {
             arr[i][j] = rand() % 255;
             cout << arr[i][j] << " ";
