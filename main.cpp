@@ -64,12 +64,12 @@ void PrintArray(T arr[][5], const uint32_t col, const uint32_t row)
 }
 
 template <typename T>
-void Big(T arr[][5], const uint32_t size, int max)
+void Big(T arr[][5], const uint32_t col, const uint32_t row, int max)
 {
     max = arr[0];
-    for (size_t i = 0;i < size; i++)
+    for (size_t i = 0;i < col; i++)
     {
-        for (size_t j = 0; j < size; j++)
+        for (size_t j = 0; j < row; j++)
         {
             if (i == j && max > arr[i])
             {
@@ -85,14 +85,20 @@ int main()
     srand(time(0));
     const uint32_t size = 5;
     int min, max;
-    int arr_i[size];
-    RandArray<int>(arr_i, size);
-    PrintArray<int>(arr_i, size);
+    int arr_i[size][size];
+    RandArray<int>(arr_i, size, size);
+    PrintArray<int>(arr_i, size, size);
     cout << endl;
     double arr_d[size][size];
     RandArray<double>(arr_d, size, size);
     PrintArray<double>(arr_d, size, size);
-    
+    cout << endl;
+    char arr_c[size][size];
+    RandArray<char>(arr_c, size, size);
+    PrintArray<char>(arr_c, size, size);
+    cout << endl;
+    Big<int>(arr_i, size, size, max);
+    cout << endl;
     return 0;
 }
 
