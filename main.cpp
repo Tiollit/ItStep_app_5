@@ -58,10 +58,29 @@ void Matrix(char arr[], const uint32_t size)
     }*/    
 }
 
+void Big(int arr[], const uint32_t size, int max)
+{
+    max = arr[0];
+    for (size_t i = 0;i < size; i++)
+    {
+        for (size_t j = 0; j < size; j++)
+        {
+            if (i == j && max > arr[i])
+            {
+                max = arr[i];
+            }                   
+        }        
+    }
+    cout << "Maximum: " << max << endl;
+}
+
 int main()
 {
     srand(time(0));
     const uint32_t size = 4;
+    int min, max;
+    void Matrix(arr, size);
+    void Big(arr, size, max);
     
     return 0;
 }
