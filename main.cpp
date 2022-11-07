@@ -6,7 +6,6 @@ using namespace std;
 
 void Matrix(int arr[], const uint32_t size)
 {
-    int arr[4][4];
     for (size_t i = 0;i < size; i++)
     {
         for (size_t j = 0; j < size; j++)
@@ -18,12 +17,11 @@ void Matrix(int arr[], const uint32_t size)
     }   
 }
 
-void Matrix(double arr[])
-{
-    double arr[4][4];
-    for (size_t i = 0;i < 4; i++)
+void Matrix(double arr[], const uint32_t size)
+{   
+    for (size_t i = 0;i < size; i++)
     {
-        for (size_t j = 0; j < 4; j++)
+        for (size_t j = 0; j < size; j++)
         {
             arr[i][j] = (rand() % 100) * 0.1;
             cout << arr[i][j] << " ";
