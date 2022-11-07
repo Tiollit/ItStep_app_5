@@ -25,28 +25,46 @@ T Rand(char trigger = 'i')
 }
 
 template <typename T>
-void RandArray(T arr[], const uint32_t size)
+void RandArray(T arr[][5], const uint32_t col, const uint32_t row)
 {
     char trigger = '0';
-    if (typeid(arr[0]) == typeid(int))
+    if (typeid(arr[0][0]) == typeid(int))
     {
         trigger = 'i';
     }
-    if (typeid(arr[0]) == typeid(double))
+    if (typeid(arr[0][0]) == typeid(double))
     {
         trigger = 'd';
     }
-    if (typeid(arr[0]) == typeid(char))
+    if (typeid(arr[0][0]) == typeid(char))
     {
         trigger = 'c';
     }
-    for (size_t i = 0; i < size; i++)
+    for (size_t i = 0; i < col; i++)
     {
-        arr[i] = Rand<T>(trigger);
+        for (size_t j = 0; j < row; j++)
+        {
+            arr[i][j] = Rand<T>(trigger);
+        }
     }
 }
 
-void Big(int arr[], const uint32_t size, int max)
+template <typename T>
+void PrintArray(T arr[][5], const uint32_t col, const uint32_t row)
+{
+    for (size_t i = 0; i < col; i++)
+    {
+        for (size_t j = 0; j < row; j++)
+        {
+            cout << arr[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
+
+template <typename T>
+void Big(T arr[][5], const uint32_t size, int max)
 {
     max = arr[0];
     for (size_t i = 0;i < size; i++)
@@ -65,10 +83,9 @@ void Big(int arr[], const uint32_t size, int max)
 int main()
 {
     srand(time(0));
-    const uint32_t size = 4;
+    const uint32_t size = 5;
     int min, max;
-    void Matrix(arr, size);
-    void Big(arr, size, max);
+    
     
     return 0;
 }
