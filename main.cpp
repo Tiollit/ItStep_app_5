@@ -92,7 +92,7 @@ void Small(int arr_i[][5], const uint32_t col, const uint32_t row, int min)
             }
         }
     }
-    cout << "Maximum: " << min << endl;
+    cout << "Minimum: " << min << endl;
 }
 
 int main()
@@ -112,7 +112,9 @@ int main()
     RandArray<char>(arr_c, size, size);
     PrintArray<char>(arr_c, size, size);
     cout << endl;
-    Big<int>(arr_i, size, size, max);
+    Big(arr_i, size, size, max);
+    cout << endl;
+    Small(arr_i, size, size, min);
     cout << endl;
     return 0;
 }
