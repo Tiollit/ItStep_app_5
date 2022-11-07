@@ -63,7 +63,7 @@ void PrintArray(T arr[][5], const uint32_t col, const uint32_t row)
     cout << endl;
 }
 
-void Big(int arr_i[][5], const uint32_t col, const uint32_t row,)
+void Big(int arr_i[][5], const uint32_t col, const uint32_t row)
 {
     int max = arr_i[0][0];
     for (size_t i = 0;i < col; i++)
