@@ -4,7 +4,7 @@
 #include <stdlib.h>
 using namespace std;
 
-int Matrix(int arr[])
+void Matrix(int arr[], const )
 {
     int arr[4][4];
     for (size_t i = 0;i < 4; i++)
@@ -15,11 +15,10 @@ int Matrix(int arr[])
             cout << arr[i][j] << " ";
         }
         cout << endl;
-    }
-    return arr[4][4];
+    }   
 }
 
-double Matrix(double arr[])
+void Matrix(double arr[])
 {
     double arr[4][4];
     for (size_t i = 0;i < 4; i++)
@@ -30,11 +29,10 @@ double Matrix(double arr[])
             cout << arr[i][j] << " ";
         }
         cout << endl;
-    }
-    return arr[4][4];
+    }    
 }
 
-char Matrix(char arr[])
+void Matrix(char arr[])
 {
     char arr[4][4];
     for (size_t i = 0;i < 4; i++)
@@ -60,8 +58,7 @@ char Matrix(char arr[])
             cout << arr[i][j] << " ";
         }
         cout << endl;
-    }*/
-    return arr[4][4];
+    }*/    
 }
 
 int main()
