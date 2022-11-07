@@ -4,12 +4,12 @@
 #include <stdlib.h>
 using namespace std;
 
-void Matrix(int arr[], const )
+void Matrix(int arr[], const uint32_t size)
 {
     int arr[4][4];
-    for (size_t i = 0;i < 4; i++)
+    for (size_t i = 0;i < size; i++)
     {
-        for (size_t j = 0; j < 4; j++)
+        for (size_t j = 0; j < size; j++)
         {
             arr[i][j] = rand() % 100;
             cout << arr[i][j] << " ";
@@ -64,7 +64,7 @@ void Matrix(char arr[])
 int main()
 {
     srand(time(0));
-    
+    const uint32_t size = 4;
     
     return 0;
 }
