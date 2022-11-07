@@ -4,6 +4,27 @@
 #include <stdlib.h>
 using namespace std;
 
+template<typename T>
+T Rand(char trigger = 'i')
+{
+    switch (trigger)
+    {
+    case 'i':
+    {
+        return rand() % 100;
+    }break;
+    case 'd':
+    {
+        return (1000 + rand() % 999) * 0.1;
+    }break;
+    case 'c':
+    {
+        return 100 + rand() % 255;
+    }break;
+    }
+}
+
+
 void Matrix(int arr[], const uint32_t size)
 {
     for (size_t i = 0;i < size; i++)
