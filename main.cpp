@@ -11,7 +11,7 @@ int LeapYear(int month[], int i)
 		month[1] = 29;
 	}
 	else y = 364;
-	return y, month[12];
+	return y;
 }
 
 int HowManyDays(int month[], int d1, int d2, int m1, int m2, int y1, int y2)
