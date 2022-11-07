@@ -85,7 +85,13 @@ int main()
     srand(time(0));
     const uint32_t size = 5;
     int min, max;
-    
+    int arr_i[size];
+    RandArray<int>(arr_i, size);
+    PrintArray<int>(arr_i, size);
+    cout << endl;
+    double arr_d[size][size];
+    RandArray<double>(arr_d, size, size);
+    PrintArray<double>(arr_d, size, size);
     
     return 0;
 }
