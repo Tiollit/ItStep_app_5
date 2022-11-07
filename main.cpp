@@ -63,32 +63,32 @@ void PrintArray(T arr[][5], const uint32_t col, const uint32_t row)
     cout << endl;
 }
 
-void Big(int arr_i[][5], const uint32_t col, const uint32_t row, int max)
+void Big(int arr_i[][5], const uint32_t col, const uint32_t row,)
 {
-    max = arr_i[0];
+    int max = arr_i[0][0];
     for (size_t i = 0;i < col; i++)
     {
         for (size_t j = 0; j < row; j++)
         {
-            if (i == j && max > arr_i[i])
+            if (i == j && max > arr_i[i][j])
             {
-                max = arr_i[i];
+                max = arr_i[i][j];
             }                   
         }        
     }
     cout << "Maximum: " << max << endl;
 }
 
-void Small(int arr_i[][5], const uint32_t col, const uint32_t row, int min)
+void Small(int arr_i[][5], const uint32_t col, const uint32_t row)
 {
-    min = arr_i[0];
+    int min = arr_i[0][0];
     for (size_t i = 0;i < col; i++)
     {
         for (size_t j = 0; j < row; j++)
         {
-            if (i == j && min < arr_i[i])
+            if (i == j && min < arr_i[i][j])
             {
-                min = arr_i[i];
+                min = arr_i[i][j];
             }
         }
     }
@@ -98,8 +98,7 @@ void Small(int arr_i[][5], const uint32_t col, const uint32_t row, int min)
 int main()
 {
     srand(time(0));
-    const uint32_t size = 5;
-    int min, max;
+    const uint32_t size = 5;    
     int arr_i[size][size];
     RandArray<int>(arr_i, size, size);
     PrintArray<int>(arr_i, size, size);
@@ -112,9 +111,9 @@ int main()
     RandArray<char>(arr_c, size, size);
     PrintArray<char>(arr_c, size, size);
     cout << endl;
-    Big(arr_i, size, size, max);
+    Big(arr_i, size, size);
     cout << endl;
-    Small(arr_i, size, size, min);
+    Small(arr_i, size, size);
     cout << endl;
     return 0;
 }
