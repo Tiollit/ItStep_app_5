@@ -24,59 +24,26 @@ T Rand(char trigger = 'i')
     }
 }
 
-
-void Matrix(int arr[], const uint32_t size)
+template <typename T>
+void RandArray(T arr[], const uint32_t size)
 {
-    for (size_t i = 0;i < size; i++)
+    char trigger = '0';
+    if (typeid(arr[0]) == typeid(int))
     {
-        for (size_t j = 0; j < size; j++)
-        {
-            arr[i][j] = rand() % 100;
-            cout << arr[i][j] << " ";
-        }
-        cout << endl;
-    }   
-}
-
-void Matrix(double arr[], const uint32_t size)
-{   
-    for (size_t i = 0;i < size; i++)
-    {
-        for (size_t j = 0; j < size; j++)
-        {
-            arr[i][j] = (rand() % 100) * 0.1;
-            cout << arr[i][j] << " ";
-        }
-        cout << endl;
-    }    
-}
-
-void Matrix(char arr[], const uint32_t size)
-{    
-    for (size_t i = 0;i < size; i++)
-    {
-        for (size_t j = 0; j < size; j++)
-        {
-            arr[i][j] = rand() % 255;
-            cout << arr[i][j] << " ";
-        }
-        cout << endl;
+        trigger = 'i';
     }
-
-    /*{
-        {'h', 'e', 'l', 'l'},
-        {'b', 'a', 'c', 'k'},
-        {'r', 'e', 'a', 'l'},
-        {'f', 'a', 'l', 'l'}
-    };
-    for (size_t i = 0; i < 4; i++)
+    if (typeid(arr[0]) == typeid(double))
     {
-        for (size_t j = 0; j < 4; j++)
-        {
-            cout << arr[i][j] << " ";
-        }
-        cout << endl;
-    }*/    
+        trigger = 'd';
+    }
+    if (typeid(arr[0]) == typeid(char))
+    {
+        trigger = 'c';
+    }
+    for (size_t i = 0; i < size; i++)
+    {
+        arr[i] = Rand<T>(trigger);
+    }
 }
 
 void Big(int arr[], const uint32_t size, int max)
