@@ -15,7 +15,7 @@ int Cow(int arr[], int number[], int p)
     for (int i = 0; i < 3; i++)
     {
         v = pow(10, k);
-        number[i] = n % v;
+        number[i] = n / v;
         //cout << number[i] << " ";
         n = n - number[i] * v;
         k -= 1;
@@ -30,10 +30,11 @@ int Cow(int arr[], int number[], int p)
             if (number[i] == arr[j])
             {
                 b = b + 1;
+                if (number[i] == number[j] && i != j) b -= 1;
                 if (i == j) c += 1;
             }                
         }
-    }         
+    }    
     cout << "You try in game: " << p << endl;
     cout << "You count in game: " << endl;
     cout << "Buls: " << b << endl;
@@ -41,10 +42,10 @@ int Cow(int arr[], int number[], int p)
     system("pause");
     if (c == 4)
     {
-        cout << "Congratulation, You found the right nember!" << endl;
+        cout << "Congratulations, You found the right number!" << endl;
         return 0;
     }
-    if (b != c)
+    if (c != 4)
     {
         return Cow(arr, number, p + 1);
     }
@@ -58,9 +59,10 @@ int main()
     for (int i = 0; i < 4; i++)
     {
         arr[i] = rand() % 9;
+        if (i == 0 && arr[i] == 0) arr[i] = rand() % 8 + 1;
         cout << arr[i] << " ";
     }
-    if (arr[0] == 0) arr[0] = rand () % 8 + 1;
+    //if (arr[0] == 0) arr[0] = rand () % 8 + 1;
     cout << endl;    
     Cow(arr, number, p);
 
